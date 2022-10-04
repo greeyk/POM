@@ -4,8 +4,8 @@ sys.path.append(sys.path[0] + "/...")
 sys.path.append(os.getcwd())
 
 from unittest import TestLoader, TestSuite, TextTestRunner
-from Test.Scripts.test_Home_Page import Google_HomePage
-from Test.Scripts.test_Google_Search import Google_Search
+from Test.Scripts.test_HomePage import Google_HomePage
+from Test.Scripts.test_LoginPage import Google_Search
 
 import testtools as testtools
 
