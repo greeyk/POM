@@ -7,51 +7,44 @@ from selenium.webdriver.support.wait import WebDriverWait
 sys.path.append(sys.path[0] + "/...")
 
 from Src.TestBase.WebDriverSetup import WebDriverSetup
-from Src.PageObject.Pages.HomePage import Home
-from Src.PageObject.Pages.LoginPage import LoginUser, LoginPassword
+from Src.PageObject.Pages.LoginPage import LoginUser, LoginIframe
 import unittest
 from time import sleep
-from selenium.webdriver.support import expected_conditions as EC
 
 username = 'hcokury6725@kenvanharen.com'
-password = 'Testing1234'
+password = 'testing1234'
 
-check_list = ['Twoje konto', 'Your account']
+title = 'Client Area - PHPTRAVELS'
 
-class Booking_Login(WebDriverSetup):
+class PHPT_Login(WebDriverSetup):
     def test_Login(self):
         driver = self.driver
-        self.driver.get("https://www.booking.com/")
+        self.driver.get("https://phptravels.org/login")
         self.driver.set_page_load_timeout(30)
-
-        home = Home(driver)
-
-        home.book_decline_cookies.click()
-        home.book_login.click()
 
         login = LoginUser(driver)
 
-        login.book_login_user_name.send_keys(username)
-        sleep(2)
-        login.book_login_user_button.click()
-        sleep(2)
+        login.login_user_name.send_keys(username)
+        sleep(1)
+        login.login_password.send_keys(password)
+        sleep(1)
 
-        login = LoginPassword(driver)
+        driver.switch_to.frame(login.login_captcha_iframe)
 
-        login.book_login_password.send_keys(password)
-        sleep(2)
-        login.book_login_password_button.click()
-        sleep(2)
+        iframe = LoginIframe(driver)
+        iframe.login_captcha.click()
+
+        driver.switch_to.default_content()
+        sleep(1)
+
+        login.login_button.click()
 
 
         try:
-            # check_status = driver.find_element(By.XPATH, '//*[@id="profile-menu-trigger--title"]').getText()
-            if driver.find_element(By.XPATH, '//*[@id="profile-menu-trigger--title"]').getText() in check_list:
+            if title == driver.title:
                 print("User logged successfully")
         except Exception as error:
             print(error + "Login failed")
-
-
 
 if __name__ == '__main__':
     unittest.main()
