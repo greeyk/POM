@@ -4,14 +4,15 @@
 # Step 2 - Locate the Login Button and Sign-In using Credentials
 class Locator(object):
     # locators for booking homepage
-    book_decline_cookies = '//*[@id="onetrust-accept-btn-handler"]'
-    book_login = '//*[@id="b2indexPage"]/header/nav[1]/div[2]/div[6]/a'
-    book_signup = '//*[@id="b2indexPage"]/header/nav[1]/div[2]/div[5]/a'
+    # book_decline_cookies = '//*[@id="onetrust-accept-btn-handler"]'
+    home_login = '//*[@id="loginSignup"]/li[1]/a'
+    home_signup = '//*[@id="loginSignup"]/li[2]/a'
 
     # locators for login page
-    book_login_user_name = '//*[@id="username"]'
-    book_login_user_button = '//*[@id="root"]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/form/div[3]/button'
-    book_login_password = '//*[@id="password"]'
-    book_login_password_button = '//*[@id="root"]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/form/button/span'
+    login_user_name = '//*[@id="inputEmail"]'
+    login_password = '//*[@id="inputPassword"]'
+    login_button = '//*[@id="login"]'
 
+    login_captcha = '//*[@id="recaptcha-anchor"]/div[1]'
+    login_captcha_iframe = '//*[@id="#divDynamicRecaptcha1"]/div/div/iframe'
 
