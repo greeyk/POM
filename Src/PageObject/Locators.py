@@ -14,3 +14,4 @@ class Locator(object):
     book_login_password = '//*[@id="password"]'
     book_login_password_button = '//*[@id="root"]/div/div/div/div[2]/div[1]/div/div/div/div/div/div/form/button/span'
 
+
