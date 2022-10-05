@@ -22,3 +22,4 @@ if __name__ == "__main__":
 
     parallel_suite = testtools.ConcurrentStreamTestSuite(lambda: ((case, None) for case in test_suite))
     parallel_suite.run(testtools.StreamResult())
+
