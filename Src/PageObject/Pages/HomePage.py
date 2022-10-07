@@ -8,15 +8,11 @@ from Src.PageObject.Locators import Locator
 class Home(object):
     def __init__(self, driver):
         self.driver = driver
-        self.book_decline_cookies = driver.find_element(By.XPATH, Locator.book_decline_cookies)
-        self.book_login = driver.find_element(By.XPATH, Locator.book_login)
-        self.book_signup = driver.find_element(By.XPATH, Locator.book_signup)
+        self.login = driver.find_element(By.XPATH, Locator.home_login)
+        self.signup = driver.find_element(By.XPATH, Locator.home_signup)
 
     def getLogin(self):
-        return self.book_login
+        return self.login
 
     def getSignup(self):
-        return self.book_signup
-
-    def declineCookies(self):
-        return self.book_decline_cookies
+        return self.signup
