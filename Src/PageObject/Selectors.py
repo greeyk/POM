@@ -18,5 +18,12 @@ class Locator(object):
 
     # manage hotels
     add_hotel = 'add_button'
+    hotel_name = '//*[@id="general"]/div[2]/div/input'
+    hotel_address = '//*[@id="mapaddress"]'
+    hotel_status = '//*[@id="layoutDrawer_content"]/main/div/form/div[2]/div/div/strong/div/div[1]/div/select/option[1]'
+    hotel_type = '//*[@id="layoutDrawer_content"]/main/div/form/div[2]/div/div/strong/div/div[3]/div/select/option[2]'
+    hotel_location = '//*[@id="s2id_searching"]'
+    add_button = '//*[@id="add"]/i'
+    description_iframe = '//*[@id="cke_1_contents"]/iframe'
 
 
